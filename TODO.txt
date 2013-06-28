@@ -12,7 +12,8 @@
 	-Regular
 	+DTO (Campaign)
 +Fancier criteria queries (RetentionCustomerService)
--Drools+Guvnor
++Drools
++Guvnor (Not tested)
 +Init database
 -AQ?
 +JMS + Distrubuted transaction
