@@ -27,11 +27,14 @@ public class MessagingService {
     public void sendTextMessage(String text) {
         try {
             Connection connection = connectionFactory.createConnection();
-            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            MessageProducer producer = session.createProducer(queue);
-
-            TextMessage message = session.createTextMessage(text);
-            producer.send(message);
+            try {
+                Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+                MessageProducer messageProducer = session.createProducer(queue);
+                TextMessage message = session.createTextMessage(text);
+                messageProducer.send(message);
+            } finally {
+                connection.close();
+            }
         } catch (JMSException e) {
             throw new RuntimeException("Couldn't send text message!", e);
         }
