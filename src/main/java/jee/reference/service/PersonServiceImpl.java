@@ -15,6 +15,8 @@ import javax.persistence.criteria.Root;
 import jee.reference.exception.RecordNotFoundException;
 import jee.reference.exception.RestClientCallException;
 import jee.reference.ext.spring.ConfigProperties;
+import jee.reference.meta.TODO;
+import jee.reference.meta.TODOTag;
 import jee.reference.model.Person;
 import jee.reference.model.Person_;
 import jee.reference.model.dto.PersonDto;
@@ -125,6 +127,9 @@ public class PersonServiceImpl implements PersonService {
         return personData;
     }
 
+    @TODO(
+        tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.JPA_2_1 },
+        value = "Might be able to use an EntityGraph from JPA 2.1 instead of the many fetches? Not sure that even if it is possible, this level of control shouldn't stay at this level.")
     private Root<Person> getJoinedPersonRoot(CriteriaQuery<Person> query) {
         Root<Person> root = query.from(Person.class);
         root.fetch(Person_.passport, JoinType.LEFT);

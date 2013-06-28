@@ -11,6 +11,8 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 
 import jee.reference.meta.JBOSS_AS7;
+import jee.reference.meta.TODO;
+import jee.reference.meta.TODOTag;
 import jee.reference.util.Logged;
 
 @Logged
@@ -24,6 +26,7 @@ public class MessagingService {
     @Resource(mappedName = "java:/queue/admin")
     private Queue queue;
 
+    @TODO(tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.JMS_2 }, value = "Probably should use features from JMS 2 (like @JMSContext)")
     public void sendTextMessage(String text) {
         try (Connection connection = connectionFactory.createConnection();
                 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);

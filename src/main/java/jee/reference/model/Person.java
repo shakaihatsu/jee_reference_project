@@ -23,6 +23,8 @@ import javax.persistence.Version;
 
 import jee.reference.meta.POI;
 import jee.reference.meta.POITag;
+import jee.reference.meta.TODO;
+import jee.reference.meta.TODOTag;
 import jee.reference.util.DateDeserializer;
 import jee.reference.util.DateSerializer;
 
@@ -54,6 +56,7 @@ public class Person {
     @Version
     private Long version;
 
+    @TODO(tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.JPA_2_1 }, value = "Probably should use @Converter in JPA 2.1")
     private Long deleted = 0L;
 
     private String firstName;

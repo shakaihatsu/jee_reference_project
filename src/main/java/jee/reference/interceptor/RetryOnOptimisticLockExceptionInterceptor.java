@@ -9,11 +9,15 @@ import javax.persistence.OptimisticLockException;
 import jee.reference.exception.OptimisticLockRetryException;
 import jee.reference.meta.POI;
 import jee.reference.meta.POITag;
+import jee.reference.meta.TODO;
+import jee.reference.meta.TODOTag;
 import jee.reference.service.RetryOnOptimisticLockException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@TODO(tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.INTERCEPTORS_1_1 },
+    value = "Probably should use @Priority from Interceptors 1.1, remove from beans.xml")
 @RetryOnOptimisticLockException
 @Interceptor
 public class RetryOnOptimisticLockExceptionInterceptor {

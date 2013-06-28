@@ -4,11 +4,15 @@ import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
+import jee.reference.meta.TODO;
+import jee.reference.meta.TODOTag;
 import jee.reference.util.Logged;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@TODO(tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.INTERCEPTORS_1_1 },
+    value = "Probably should use @Priority from Interceptors 1.1, remove from beans.xml")
 @Logged
 @Interceptor
 public class LoggingInterceptor {
