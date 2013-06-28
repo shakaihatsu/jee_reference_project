@@ -41,7 +41,7 @@ public class ArquillianReferenceIT {
             .addAsWebInfResource("test-ds.xml").addAsResource("test-persistence.xml", "META-INF/persistence.xml")
             .addAsResource("extensions", "META-INF/services/javax.enterprise.inject.spi.Extension").addAsWebInfResource("test-beans.xml", "beans.xml");
 
-        // archive.as(ZipExporter.class).exportTo(new File("e:/tmp/test.war"), true);
+        // archive.as(ZipExporter.class).exportTo(new File("/path/to/place/archive"), true);
 
         addInitSqlAssets(archive);
 
