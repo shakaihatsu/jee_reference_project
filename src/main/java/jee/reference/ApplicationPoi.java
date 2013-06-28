@@ -11,7 +11,7 @@ public final class ApplicationPoi {
 
     @JBOSS_AS7
     @POI(tags = { POITag.JSON }, value = "Had to add jackson-jaxrs to pom to be able to use json (de)serializers.")
-    public static final String JSON_SERIALIZER_DEPENDENCY = "jackson-mapper-asl";
+    public static final String JSON_SERIALIZER_DEPENDENCY = "jackson-jaxrs";
 
     @ExternalDependency
     @JBOSS_AS7
