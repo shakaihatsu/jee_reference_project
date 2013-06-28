@@ -25,16 +25,12 @@ public class MessagingService {
     private Queue queue;
 
     public void sendTextMessage(String text) {
-        try {
-            Connection connection = connectionFactory.createConnection();
-            try {
+        try (Connection connection = connectionFactory.createConnection();
                 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-                MessageProducer messageProducer = session.createProducer(queue);
-                TextMessage message = session.createTextMessage(text);
-                messageProducer.send(message);
-            } finally {
-                connection.close();
-            }
+                MessageProducer messageProducer = session.createProducer(queue);) {
+
+            TextMessage message = session.createTextMessage(text);
+            messageProducer.send(message);
         } catch (JMSException e) {
             throw new RuntimeException("Couldn't send text message!", e);
         }
