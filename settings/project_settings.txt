@@ -1,0 +1,4 @@
+Java 1.7
+CDI 1.0
+JPA 2.0
+Database=H2

@@ -1,0 +1,10 @@
+import jee.reference.ext.drools.fact.Person;
+import java.util.Set;
+
+rule "filterDeletedPeople"
+    when
+        personList: Set()
+        person: Person( deleted == 1 )
+	then
+		personList.remove(person);
+end

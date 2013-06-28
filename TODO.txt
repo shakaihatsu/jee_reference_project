@@ -1,0 +1,25 @@
++REST interface
+	+Error handling
++DAO (Service)
++entityManager.lock(someEntity, LockModeType.OPTIMISTIC_FORCE_INCREMENT);
++Log
++Retry with Interceptor
++Spring
+	+Config properties
+	-SimpleJdbcCall
++REST client
+-NamedQuery
+	-Regular
+	+DTO (Campaign)
++Fancier criteria queries (RetentionCustomerService)
+-Drools+Guvnor
++Init database
+-AQ?
++JMS + Distrubuted transaction
+	+MDB (Message in)
+	+Message out
++Date serializer/deserializer
++InstanceSampleBuilder
+
+-UI
+-Inheritence of Entities

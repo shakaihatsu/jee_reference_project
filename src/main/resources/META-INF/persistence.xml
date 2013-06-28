@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	
+	<persistence-unit name="admin" transaction-type="JTA">
+		<description>Admin Persistence Unit</description>
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<jta-data-source>java:jboss/datasources/AdminDS</jta-data-source>
+
+		<class>jee.reference.model.Address</class>
+		<class>jee.reference.model.Person</class>
+		<class>jee.reference.model.CreditCard</class>
+		<class>jee.reference.model.DrivingLicence</class>
+		<class>jee.reference.model.Passport</class>
+		<class>jee.reference.model.Car</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
+		    <property name="hibernate.connection.charSet" value="UTF-8" />
+			<property name="hibernate.transaction.flush_before_completion" value="true" />
+			
+			<!-- Debugging -->
+            <property name="hibernate.generate_statistics" value="true" />
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.use_sql_comments" value="true" />
+				
+			<!-- Cache -->
+            <property name="hibernate.cache.use_second_level_cache" value="false" />
+            <property name="hibernate.cache.use_query_cache" value="false" />
+		</properties>
+	</persistence-unit>
+</persistence>
