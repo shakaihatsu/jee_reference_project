@@ -18,7 +18,7 @@
         <!-- If you want to use the JBOSS_HOME environment variable, just delete 
             the jbossHome property -->
         <configuration>
-            <property name="jbossHome">c:/deployed/jboss-as-7.1.1.Final</property>
+            <property name="jbossHome">/path/to/jboss</property>
             <!-- <property name="providerUrl">jnp://localhost:1099</property> -->
             <property name="serverConfig">standalone-full.xml</property>
             <property name="javaVmArguments">-Xmx512m -XX:MaxPermSize=128m -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=y</property>
