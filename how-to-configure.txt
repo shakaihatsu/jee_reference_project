@@ -1,0 +1,2 @@
+src/test/resource/arquillian.xml
+    Set jbossHome
