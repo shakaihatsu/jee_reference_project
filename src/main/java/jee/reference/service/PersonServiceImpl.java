@@ -57,11 +57,6 @@ public class PersonServiceImpl implements PersonService {
         return personList;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see jee.reference.service.PersonService#getPerson(java.lang.Long)
-     */
     @Override
     public Person getPerson(Long personId) throws RecordNotFoundException {
         Person person = entityManager.find(Person.class, personId);
@@ -128,8 +123,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @TODO(
-        tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.JPA_2_1 },
-        value = "Might be able to use an EntityGraph from JPA 2.1 instead of the many fetches? Not sure that even if it is possible, this level of control shouldn't stay at this level.")
+            tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.JPA_2_1 },
+            value = "Might be able to use an EntityGraph from JPA 2.1 instead of the many fetches? Not sure that even if it is possible, this level of control shouldn't stay at this level.")
     private Root<Person> getJoinedPersonRoot(CriteriaQuery<Person> query) {
         Root<Person> root = query.from(Person.class);
         root.fetch(Person_.passport, JoinType.LEFT);

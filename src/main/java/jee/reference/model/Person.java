@@ -34,14 +34,14 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @NamedQueries({
-    @NamedQuery(name = Person.NQ_GET_ALL_PERSON_DATA, query = "SELECT NEW jee.reference.model.dto.PersonDto("
-        + " person.firstName, person.lastName, person.dateOfBirth, drivingLicence.documentId, passport.documentId"
-        + " ) FROM Person person, DrivingLicence drivingLicence, Passport passport"
-        + " WHERE person.deleted = :deleted AND drivingLicence.owner = person AND passport.owner = person"),
-    @NamedQuery(name = Person.NQ_GET_PERSON_DATA, query = "SELECT NEW jee.reference.model.dto.PersonDto("
-        + " person.firstName, person.lastName, person.dateOfBirth, drivingLicence.documentId, passport.documentId"
-        + " ) FROM Person person LEFT OUTER JOIN person.drivingLicence drivingLicence LEFT OUTER JOIN person.passport passport"
-        + " WHERE person.id = :personId"), })
+        @NamedQuery(name = Person.NQ_GET_ALL_PERSON_DATA, query = "SELECT NEW jee.reference.model.dto.PersonDto("
+                + " _person.firstName, _person.lastName, _person.dateOfBirth, _drivingLicence.documentId, _passport.documentId"
+                + " ) FROM Person _person, DrivingLicence _drivingLicence, Passport _passport"
+                + " WHERE _person.deleted = :deleted AND _drivingLicence.owner = _person AND _passport.owner = _person"),
+        @NamedQuery(name = Person.NQ_GET_PERSON_DATA, query = "SELECT NEW jee.reference.model.dto.PersonDto("
+                + " _person.firstName, _person.lastName, _person.dateOfBirth, _drivingLicence.documentId, _passport.documentId"
+                + " ) FROM Person _person LEFT OUTER JOIN _person.drivingLicence _drivingLicence LEFT OUTER JOIN _person.passport _passport"
+                + " WHERE _person.id = :personId"), })
 @Entity
 @SequenceGenerator(name = "personIdSequenceGenerator", sequenceName = "SEQ_PERSON_ID", initialValue = 1, allocationSize = 10)
 public class Person {
@@ -191,8 +191,8 @@ public class Person {
     @Override
     public String toString() {
         return "Person [id=" + id + ", version=" + version + ", deleted=" + deleted + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth="
-            + dateOfBirth + ", favoriteNumber=" + favoriteNumber + ", passport=" + passport + ", drivingLicence=" + drivingLicence + ", cars=" + cars
-            + ", addresses=" + addresses + ", creditCards=" + creditCards + "]";
+                + dateOfBirth + ", favoriteNumber=" + favoriteNumber + ", passport=" + passport + ", drivingLicence=" + drivingLicence + ", cars=" + cars
+                + ", addresses=" + addresses + ", creditCards=" + creditCards + "]";
     }
 
 }
