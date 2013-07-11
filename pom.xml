@@ -20,10 +20,6 @@
         </sonar.exclusions>
     </properties>
 
-	<scm>
-		<developerConnection>scm:hg:http://ephubudw0073:8123/jee_reference_project</developerConnection>
-	</scm>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
