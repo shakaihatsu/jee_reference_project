@@ -13,7 +13,7 @@
 +REST client
 -NamedQuery
 	-Regular
-	+DTO (Campaign)
+	+DTO
 +Fancier criteria queries (RetentionCustomerService)
 +Drools
 +Guvnor (Not tested)
