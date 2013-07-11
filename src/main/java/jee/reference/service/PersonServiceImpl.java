@@ -132,9 +132,6 @@ public class PersonServiceImpl implements PersonService {
         root.fetch(Person_.cars, JoinType.LEFT);
         root.fetch(Person_.addresses, JoinType.LEFT);
 
-        // TODO
-        // root.fetch(Campaign_.campaignConfigs, JoinType.LEFT).fetch(CampaignConfig_.bonusStage, JoinType.LEFT);
-
         return root;
     }
 
