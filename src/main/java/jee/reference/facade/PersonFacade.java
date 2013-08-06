@@ -32,8 +32,8 @@ public class PersonFacade {
     }
 
     @RetryOnOptimisticLockException
-    public Person updatePerson(Long personId, Person person) {
-        return personService.updatePerson(personId, person);
+    public Person updatePerson(Person person) {
+        return personService.updatePerson(person);
     }
 
     public List<PersonDto> getAllPersonData() {

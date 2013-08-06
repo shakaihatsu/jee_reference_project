@@ -14,7 +14,7 @@ public interface PersonService {
 
     Long createPerson(Person person);
 
-    Person updatePerson(Long personId, Person person);
+    Person updatePerson(Person person);
 
     List<PersonDto> getAllPersonData();
 

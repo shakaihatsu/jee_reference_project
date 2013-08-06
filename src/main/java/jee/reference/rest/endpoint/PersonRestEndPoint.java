@@ -48,11 +48,10 @@ public class PersonRestEndPoint {
     }
 
     @PUT
-    @Path("/{personId}")
     @Consumes("application/json")
     @Produces("application/json")
-    public Person updatePerson(@PathParam("personId") Long personId, Person person) {
-        return personFacade.updatePerson(personId, person);
+    public Person updatePerson(Person person) {
+        return personFacade.updatePerson(person);
     }
 
     @GET
@@ -91,8 +90,9 @@ public class PersonRestEndPoint {
     @Path("/qnd/{personId}/{firstName}")
     public Person qndUpdatePerson(@PathParam("personId") Long personId, @PathParam("firstName") String firstName) {
         Person person = new Person();
+        person.setId(personId);
         person.setFirstName(firstName);
 
-        return personFacade.updatePerson(personId, person);
+        return personFacade.updatePerson(person);
     }
 }

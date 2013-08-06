@@ -77,8 +77,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person updatePerson(Long personId, Person person) {
-        person.setId(personId);
+    public Person updatePerson(Person person) {
         Person updatedPerson = entityManager.merge(person);
 
         return updatedPerson;
@@ -123,8 +122,8 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @TODO(
-            tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.JPA_2_1 },
-            value = "Might be able to use an EntityGraph from JPA 2.1 instead of the many fetches? Not sure that even if it is possible, this level of control shouldn't stay at this level.")
+        tags = { TODOTag.MAY_CHANGE_IN_THE_FUTURE, TODOTag.JPA_2_1 },
+        value = "Might be able to use an EntityGraph from JPA 2.1 instead of the many fetches? Not sure that even if it is possible, this level of control shouldn't stay at this level.")
     private Root<Person> getJoinedPersonRoot(CriteriaQuery<Person> query) {
         Root<Person> root = query.from(Person.class);
         root.fetch(Person_.passport, JoinType.LEFT);
