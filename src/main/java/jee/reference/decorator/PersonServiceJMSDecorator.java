@@ -48,8 +48,8 @@ public class PersonServiceJMSDecorator implements PersonService {
     }
 
     @Override
-    public Person updatePerson(Long personId, Person person) {
-        return delegate.updatePerson(personId, person);
+    public Person updatePerson(Person person) {
+        return delegate.updatePerson(person);
     }
 
     @Override
