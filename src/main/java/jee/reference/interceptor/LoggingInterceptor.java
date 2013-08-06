@@ -40,7 +40,7 @@ public class LoggingInterceptor {
         logger.debug(methodName + " STARTED");
         try {
             Object retValue = invocationContext.proceed();
-            logger.debug(methodName + " FINISHED in " + (System.currentTimeMillis() - startTime) + " ms");
+            logger.debug(methodName + " FINISHED in " + (System.currentTimeMillis() - startTime) + " ms: " + retValue);
             return retValue;
         } catch (Exception e) {
             logger.warn(methodName + " FAILED in " + (System.currentTimeMillis() - startTime) + " ms");

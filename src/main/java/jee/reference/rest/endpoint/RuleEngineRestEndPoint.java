@@ -13,6 +13,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import jee.reference.exception.InternalServerErrorException;
+import jee.reference.meta.POI;
+import jee.reference.meta.POITag;
 import jee.reference.meta.QND;
 import jee.reference.model.Address;
 import jee.reference.model.Car;
@@ -28,6 +30,7 @@ import org.modelmapper.ModelMapper;
 public class RuleEngineRestEndPoint {
     @Inject
     private DroolsService droolsService;
+    @POI(tags = { POITag.USEFUL }, value = "Able to copy one POJO to another.")
     @Inject
     private ModelMapper modelMapper;
 
