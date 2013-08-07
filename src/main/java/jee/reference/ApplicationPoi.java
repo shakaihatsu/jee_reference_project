@@ -18,4 +18,9 @@ public final class ApplicationPoi {
     @POI(tags = { POITag.DATASOURCE },
         value = "JbossAS7 will look for datasources in *-ds.xml files on the classpath. This is not recommended for production environments though.")
     public static final String DATASOURCE = "admin-ds.xml";
+
+    @ExternalDependency
+    @POI(tags = { POITag.TRANSACTION, POITag.BE_CAREFUL },
+        value = "With JTA, had to set hibernate property 'hibernate.transaction.manager_lookup_class' in the persistence.xml.")
+    public static final String TRANSACTION_MANAGER = "";
 }
