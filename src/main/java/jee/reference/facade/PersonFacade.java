@@ -19,8 +19,8 @@ public class PersonFacade {
     @Inject
     private PersonService personService;
 
-    public List<Person> getAllPersons() {
-        return personService.getAllPersons();
+    public List<Person> getAllPerson() {
+        return personService.getAllPerson();
     }
 
     public Person getPerson(Long personId) throws RecordNotFoundException {

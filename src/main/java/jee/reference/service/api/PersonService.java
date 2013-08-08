@@ -8,7 +8,7 @@ import jee.reference.model.Person;
 import jee.reference.model.dto.PersonDto;
 
 public interface PersonService {
-    List<Person> getAllPersons();
+    List<Person> getAllPerson();
 
     Person getPerson(Long personId) throws RecordNotFoundException;
 

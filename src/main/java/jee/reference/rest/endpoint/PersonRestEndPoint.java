@@ -30,7 +30,7 @@ public class PersonRestEndPoint {
     @GET
     @Produces("application/json")
     public List<Person> getAllPerson() {
-        return personFacade.getAllPersons();
+        return personFacade.getAllPerson();
     }
 
     @GET

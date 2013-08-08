@@ -31,8 +31,8 @@ public class PersonServiceJMSDecorator implements PersonService {
     private MessagingService messagingService;
 
     @Override
-    public List<Person> getAllPersons() {
-        return delegate.getAllPersons();
+    public List<Person> getAllPerson() {
+        return delegate.getAllPerson();
     }
 
     @Override
