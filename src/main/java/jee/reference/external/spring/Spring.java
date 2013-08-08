@@ -1,4 +1,4 @@
-package jee.reference.ext.spring;
+package jee.reference.external.spring;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;

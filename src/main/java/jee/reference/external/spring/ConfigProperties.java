@@ -1,4 +1,4 @@
-package jee.reference.ext.spring;
+package jee.reference.external.spring;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

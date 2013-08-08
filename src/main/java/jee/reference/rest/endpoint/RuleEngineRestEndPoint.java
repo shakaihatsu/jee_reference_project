@@ -38,13 +38,13 @@ public class RuleEngineRestEndPoint {
     @GET
     @Path("/qnd/{firstName}/{deleted}")
     @Produces("application/json")
-    public Set<jee.reference.ext.drools.fact.Person> qndRunRules(@PathParam("firstName") String firstName, @PathParam("deleted") Long deleted)
+    public Set<jee.reference.external.drools.fact.Person> qndRunRules(@PathParam("firstName") String firstName, @PathParam("deleted") Long deleted)
             throws InternalServerErrorException {
         Person person = createPerson(firstName, deleted);
 
-        jee.reference.ext.drools.fact.Person personFact = convertToFact(person);
+        jee.reference.external.drools.fact.Person personFact = convertToFact(person);
 
-        Set<jee.reference.ext.drools.fact.Person> personFactSet = new HashSet<jee.reference.ext.drools.fact.Person>(Arrays.asList(personFact));
+        Set<jee.reference.external.drools.fact.Person> personFactSet = new HashSet<jee.reference.external.drools.fact.Person>(Arrays.asList(personFact));
         List<Object> factList = Arrays.asList(personFactSet, personFact);
 
         droolsService.executeInStatelessKnowledgeSession(factList);
@@ -68,11 +68,11 @@ public class RuleEngineRestEndPoint {
         return person;
     }
 
-    private jee.reference.ext.drools.fact.Person convertToFact(Person person) {
-        return modelMapper.map(person, jee.reference.ext.drools.fact.Person.class);
+    private jee.reference.external.drools.fact.Person convertToFact(Person person) {
+        return modelMapper.map(person, jee.reference.external.drools.fact.Person.class);
     }
 
-    private Person convertFromFact(jee.reference.ext.drools.fact.Person personFact) {
+    private Person convertFromFact(jee.reference.external.drools.fact.Person personFact) {
         return modelMapper.map(personFact, Person.class);
     }
 }

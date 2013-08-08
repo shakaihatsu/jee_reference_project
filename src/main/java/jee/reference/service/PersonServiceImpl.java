@@ -14,7 +14,7 @@ import javax.persistence.criteria.Root;
 
 import jee.reference.exception.RecordNotFoundException;
 import jee.reference.exception.RestClientCallException;
-import jee.reference.ext.spring.ConfigProperties;
+import jee.reference.external.spring.ConfigProperties;
 import jee.reference.meta.TODO;
 import jee.reference.meta.TODOTag;
 import jee.reference.model.Person;

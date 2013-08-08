@@ -1,4 +1,4 @@
-package jee.reference.ext.spring;
+package jee.reference.external.spring;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;

@@ -20,6 +20,6 @@
 	<context:property-placeholder location="classpath*:*.properties"
 		ignore-resource-not-found="true" system-properties-mode="OVERRIDE" />
 
-	<context:component-scan base-package="jee.reference.ext.spring" />
+	<context:component-scan base-package="jee.reference.external.spring" />
 
 </beans>

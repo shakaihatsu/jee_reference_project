@@ -1,4 +1,4 @@
-package jee.reference.ext.drools.fact;
+package jee.reference.external.drools.fact;
 
 public class Car {
     private Long id;

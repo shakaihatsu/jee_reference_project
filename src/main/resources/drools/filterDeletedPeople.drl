@@ -1,4 +1,4 @@
-import jee.reference.ext.drools.fact.Person;
+import jee.reference.external.drools.fact.Person;
 import java.util.Set;
 
 rule "filterDeletedPeople"
