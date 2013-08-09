@@ -85,3 +85,7 @@ Required to deploy
   When deployed from IDE
   ----------------------
   Make sure that the ```target/generated-sources/annotations``` (contains the JPA metamodels) is on the source path.
+
+Tested on
+---------
+JBoss AS 7.1.1
