@@ -75,7 +75,7 @@ The concept here is to add typesafe meta information. The main advantage is (com
 
 Required to deploy
 ------------------
-- Queue
+- JMS Queue
   - queue/admin
 - Datasource
   - java:jboss/datasources/AdminDS (Referenced from persistence.xml)
