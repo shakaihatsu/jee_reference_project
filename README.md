@@ -78,7 +78,7 @@ Required to deploy
 - Queue
   - queue/admin
 - Datasource
-  - java:jboss/datasources/AdminDS
+  - java:jboss/datasources/AdminDS (Referenced from persistence.xml)
 - JDBC driver
   - org.h2.jdbcx.JdbcDataSource
 
