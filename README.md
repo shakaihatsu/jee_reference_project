@@ -28,6 +28,7 @@ Technologies
   - Stateless (For using CMT)
   - MDB (JMS consumer)
 - RESTful web services (JAX-RS)
+  - Exception handling
 - REST client (Not JAX-RS 2.1 yet!)
 - Persistence
   - JPA
