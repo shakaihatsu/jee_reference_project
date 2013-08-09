@@ -9,7 +9,7 @@ Overview
 The purpose of this project is to "steal" code from it.
 Basically tries to accumulate concepts, ideas and corresponding solutions inspired mostly by real life situations.
 
-There is an emphasis on pointing out important parts: non-trivial/hard-to-remember solutions to problems, unintuitive or strange behaviour, some useful features which are likely to be unknown to most - or really anything that can be considered important when working on an application.
+There is an emphasis on pointing out important parts ([POI](#poi)): non-trivial/hard-to-remember solutions to problems, unintuitive or strange behaviour, some useful features which are likely to be unknown to most - or really anything that can be considered important when working on an application.
 
 The project itself has no purpose regarding functionality. It is buildable and deployable however. There's really no point in listing the features, what's interesting is the [Technologies](#technologies) that are being used in this project.
 
@@ -61,3 +61,13 @@ TODO technologies
 - Timer EJB
 - SOAP
 - RMI
+
+POI
+---
+The ```jee.reference.meta``` package contains various structures to help point out important/interesting parts of the project.
+
+A prime example is the ```@POI``` annotation and the ```POITag``` enum. The ```@POI``` annotation is used to annotate points of interest, and the ```POITag``` enum is simply a list of keywords a subset of which can be used inside ```@POI```.
+
+There are other similar structures as well. (```@NOTE```, ```@TODO``` etc.)
+
+The concept here is to add typesafe meta information. The main advantage is (compared to using simple comments instead) is that they can be refactored and also the project can be queried for certain keywords easily with the help of any IDE.
