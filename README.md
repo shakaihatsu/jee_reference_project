@@ -72,3 +72,16 @@ A prime example is the ```@POI``` annotation and the ```POITag``` enum. The ```@
 There are other similar structures as well. (```@NOTE```, ```@TODO``` etc.)
 
 The concept here is to add typesafe meta information. The main advantage is (compared to using simple comments instead) is that they can be refactored and also the project can be queried for certain keywords easily with the help of any IDE.
+
+Required to deploy
+------------------
+- Queue
+  - queue/admin
+- Datasource
+  - java:jboss/datasources/AdminDS
+- JDBC driver
+  - org.h2.jdbcx.JdbcDataSource
+
+  When deployed from IDE
+  ----------------------
+  Make sure that the ```target/generated-sources/annotations``` (contains the JPA metamodels) is on the source path.
