@@ -2,10 +2,13 @@ package jee.reference.it;
 
 import java.io.File;
 
+import javax.inject.Inject;
+
 import jee.reference.TopLevelPackageMarker;
 import jee.reference.meta.JBOSS_AS7;
 import jee.reference.meta.POI;
 import jee.reference.meta.POITag;
+import jee.reference.service.decision.PersonDecisionBean;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -21,25 +24,30 @@ import org.junit.runner.RunWith;
 public class ArquillianReferenceIT {
     @JBOSS_AS7
     @POI(
-        tags = { POITag.BE_CAREFUL },
-        value = "Arquillian needs one and only one container adapter on the classpath. In case of a container managed JBoss AS, the maven dependency version must match the version of the JBoss installation.")
+            tags = { POITag.BE_CAREFUL },
+            value = "Arquillian needs one and only one container adapter on the classpath. In case of a container managed JBoss AS, the maven dependency version must match the version of the JBoss installation.")
     public static final String ARQUILLIAN_CONTAINER_ADAPTER_MAVEN_DEPENDENCY = "jboss-as-arquillian-container-managed";
 
     private static final String MAVEN_PROFILE = null;
 
-    @Deployment
-    public static final Archive<?> createDeployment() {
-        File[] libs;
+    private static File[] libs;
 
+    @Inject
+    private PersonDecisionBean personDecisionBean;
+
+    static {
         if (MAVEN_PROFILE == null) {
             libs = Maven.resolver().loadPomFromFile("pom.xml").importRuntimeAndTestDependencies().asFile();
         } else {
             libs = Maven.resolver().loadPomFromFile("pom.xml", MAVEN_PROFILE).importRuntimeAndTestDependencies().asFile();
         }
+    }
 
+    @Deployment
+    public static final Archive<?> createDeployment() {
         WebArchive archive = ShrinkWrap.create(WebArchive.class, "test.war").addAsLibraries(libs).addPackages(true, TopLevelPackageMarker.class.getPackage())
-            .addAsWebInfResource("test-ds.xml").addAsResource("test-persistence.xml", "META-INF/persistence.xml")
-            .addAsResource("extensions", "META-INF/services/javax.enterprise.inject.spi.Extension").addAsWebInfResource("test-beans.xml", "beans.xml");
+                .addAsWebInfResource("test-ds.xml").addAsResource("test-persistence.xml", "META-INF/persistence.xml")
+                .addAsResource("extensions", "META-INF/services/javax.enterprise.inject.spi.Extension").addAsWebInfResource("test-beans.xml", "beans.xml");
 
         // archive.as(ZipExporter.class).exportTo(new File("/path/to/place/archive"), true);
 
@@ -50,7 +58,8 @@ public class ArquillianReferenceIT {
 
     @Test
     public void test() throws Exception {
-        Assert.assertTrue(true);
+        boolean personDoesntExist = personDecisionBean.personDoesntExist(null);
+        Assert.assertTrue(personDoesntExist);
     }
 
     private static void addInitSqlAssets(WebArchive archive) {
