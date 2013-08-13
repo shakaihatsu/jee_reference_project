@@ -4,7 +4,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import jee.reference.model.Passport;
-import jee.reference.service.PassportService;
+import jee.reference.service.dao.PassportService;
 import jee.reference.util.Logged;
 
 @Logged

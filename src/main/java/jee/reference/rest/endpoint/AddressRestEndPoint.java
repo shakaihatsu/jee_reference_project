@@ -11,7 +11,7 @@ import javax.ws.rs.Produces;
 
 import jee.reference.exception.RecordNotFoundException;
 import jee.reference.model.Address;
-import jee.reference.service.AddressService;
+import jee.reference.service.dao.AddressService;
 import jee.reference.util.Logged;
 
 @Logged

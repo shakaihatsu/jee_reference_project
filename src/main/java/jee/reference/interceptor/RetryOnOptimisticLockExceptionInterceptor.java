@@ -11,7 +11,7 @@ import jee.reference.meta.POI;
 import jee.reference.meta.POITag;
 import jee.reference.meta.TODO;
 import jee.reference.meta.TODOTag;
-import jee.reference.service.RetryOnOptimisticLockException;
+import jee.reference.service.dao.RetryOnOptimisticLockException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

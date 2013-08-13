@@ -1,5 +1,6 @@
 package jee.reference.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -14,7 +15,9 @@ import jee.reference.util.ResidentsSerializer;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 @Entity
-public class Address {
+public class Address implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue
     private Long id;

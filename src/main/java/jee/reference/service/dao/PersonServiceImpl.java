@@ -1,7 +1,9 @@
-package jee.reference.service;
+package jee.reference.service.dao;
 
 import java.util.List;
 
+import javax.ejb.Local;
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -31,7 +33,9 @@ import org.jboss.resteasy.client.ClientResponse;
 
 @Logged
 @Stateless
-public class PersonServiceImpl implements PersonService {
+@Local(PersonService.class)
+@Remote(jee.reference.service.api.remote.PersonService.class)
+public class PersonServiceImpl implements PersonService, jee.reference.service.api.remote.PersonService {
     @Inject
     @Admin
     private EntityManager entityManager;
@@ -71,7 +75,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Long createPerson(Person person) {
         entityManager.persist(person);
-        messagingService.sendTextMessage("Person created (message sent as past of a transaction):" + person);
+        messagingService.sendTextMessage("Person created (message sent as part of a transaction):" + person);
 
         return person.getId();
     }

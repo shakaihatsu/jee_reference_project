@@ -9,8 +9,8 @@ import jee.reference.exception.RecordNotFoundException;
 import jee.reference.exception.RestClientCallException;
 import jee.reference.model.Person;
 import jee.reference.model.dto.PersonDto;
-import jee.reference.service.RetryOnOptimisticLockException;
 import jee.reference.service.api.PersonService;
+import jee.reference.service.dao.RetryOnOptimisticLockException;
 import jee.reference.util.Logged;
 
 @Logged

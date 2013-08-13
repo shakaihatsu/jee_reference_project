@@ -1,5 +1,6 @@
 package jee.reference.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -44,7 +45,9 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
                 + " WHERE _person.id = :personId"), })
 @Entity
 @SequenceGenerator(name = "personIdSequenceGenerator", sequenceName = "SEQ_PERSON_ID", initialValue = 1, allocationSize = 10)
-public class Person {
+public class Person implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     public static final String NQ_GET_ALL_PERSON_DATA = "NQ_GET_ALL_PERSON_DATA";
     public static final String NQ_GET_PERSON_DATA = "NQ_GET_PERSON_DATA";
 

@@ -1,4 +1,4 @@
-package jee.reference.service;
+package jee.reference.service.dao;
 
 import java.util.List;
 
