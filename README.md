@@ -29,6 +29,9 @@ Technologies
   - MDB (JMS consumer)
 - RESTful web services (JAX-RS)
   - Exception handling
+- RMI
+  - EJB Remote interface
+  - Remote EJB call
 - REST client (Not JAX-RS 2.1 yet!)
 - Persistence
   - JPA
